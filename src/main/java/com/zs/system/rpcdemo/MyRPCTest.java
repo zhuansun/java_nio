@@ -4,7 +4,6 @@ import com.zs.system.rpcdemo.proxy.MyProxy;
 import com.zs.system.rpcdemo.rpc.Dispatcher;
 import com.zs.system.rpcdemo.rpc.protocol.MyContent;
 import com.zs.system.rpcdemo.rpc.transport.MyHttpRpcHandler;
-import com.bjmashibing.system.rpcdemo.service.*;
 import com.zs.system.rpcdemo.service.*;
 import com.zs.system.rpcdemo.util.SerDerUtil;
 import io.netty.bootstrap.ServerBootstrap;

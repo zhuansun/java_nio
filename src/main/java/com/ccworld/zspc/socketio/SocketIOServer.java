@@ -1,4 +1,4 @@
-package com.zs.system.io;
+package com.ccworld.zspc.socketio;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,12 +8,7 @@ import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-/**
- * @author: 马士兵教育
- * @create: 2020-05-17 05:34
- * BIO  多线程的方式
- */
-public class SocketIOPropertites {
+public class SocketIOServer {
 
 
     //server socket listen property:
@@ -31,19 +26,10 @@ public class SocketIOPropertites {
     private static final int CLI_LINGER_N = 0;
     private static final int CLI_TIMEOUT = 0;//读取超时时间，比如：我只读取三秒，超过三秒了，我就不等了
     private static final boolean CLI_NO_DELAY = false;
-/*
-
-    StandardSocketOptions.TCP_NODELAY
-    StandardSocketOptions.SO_KEEPALIVE
-    StandardSocketOptions.SO_LINGER
-    StandardSocketOptions.SO_RCVBUF
-    StandardSocketOptions.SO_SNDBUF
-    StandardSocketOptions.SO_REUSEADDR
-
- */
 
 
     public static void main(String[] args) {
+
 
         ServerSocket server = null;
         try {
@@ -57,10 +43,11 @@ public class SocketIOPropertites {
             e.printStackTrace();
         }
         System.out.println("server up use 9090!");
+
         try {
             while (true) {
 
-                // System.in.read();  //分水岭：
+                 System.in.read();  //分水岭：
 
                 Socket client = server.accept();  //阻塞的，没有 -1  一直卡着不动  accept(4,
                 System.out.println("client port: " + client.getPort());
@@ -117,4 +104,5 @@ public class SocketIOPropertites {
         }
 
     }
+
 }
